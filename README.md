@@ -3,9 +3,11 @@ A co-op NES Tetris clone, built from the ground up. I tried my best as a solo am
 I will add more features, but only after I have some rest (lol)
 ## The Title Screen
 <img width="1367" height="1080" alt="image" src="https://github.com/user-attachments/assets/61aa6d5b-1f20-4ea3-98be-7669c42ca360" />
+
 Nothing fancy. Just use UP and DOWN to choose start level (max 99, min 00).
 Press START to enter 1 player mode. Press B+START to enter co-op mode.
 ## Co-op
 <img width="1149" height="1080" alt="image" src="https://github.com/user-attachments/assets/0021abba-a172-48c6-bb4f-eb803d204375" />
+
 A picture of co-op mode. (12x20 board)
 When you lose, press A to come back to the menu screen.
