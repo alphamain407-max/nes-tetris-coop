@@ -8,3 +8,4 @@ Press START to enter 1 player mode. Press B+START to enter co-op mode.
 ## Co-op
 <img width="1149" height="1080" alt="image" src="https://github.com/user-attachments/assets/0021abba-a172-48c6-bb4f-eb803d204375" />
 A picture of co-op mode. (12x20 board)
+When you lose, press A to come back to the menu screen.
