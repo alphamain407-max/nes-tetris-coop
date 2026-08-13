@@ -1944,12 +1944,12 @@ pieces:
 	; =========================================================================
 	; Rotation 0 (Vertical)
 	.byte $FF, $00,  $00, $00,  $01, $00,  $02, $00
-	; Rotation 1 (Horizontal)
-	.byte $FF, $FE,  $FF, $FF,  $FF, $00,  $FF, $01
+	; Rotation 1 (Horizontal) - Shifted right to remove $FE
+	.byte $FF, $FF,  $FF, $00,  $FF, $01,  $FF, $02
 	; Rotation 2 (Vertical - Duplicate)
 	.byte $FF, $00,  $00, $00,  $01, $00,  $02, $00
 	; Rotation 3 (Horizontal - Duplicate)
-	.byte $FF, $FE,  $FF, $FF,  $FF, $00,  $FF, $01
+	.byte $FF, $FF,  $FF, $00,  $FF, $01,  $FF, $02
 
 	; =========================================================================
 	; 2. J PIECE
@@ -1964,16 +1964,16 @@ pieces:
 	.byte $FF, $FF,  $FF, $00,  $FF, $01,  $00, $01
 
 	; =========================================================================
-	; 3. L PIECE
+	; 3. L PIECE (Data corrected to actual L shapes)
 	; =========================================================================
 	; Rotation 0 (Pointing Down)
-	.byte $FF, $00,  $FF, $01,  $00, $FF,  $00, $00
-	; Rotation 1 (Pointing Left)
-	.byte $FF, $00,  $00, $00,  $00, $01,  $01, $01
-	; Rotation 2 (Pointing Up)
-	.byte $FF, $00,  $00, $00,  $01, $00,  $01, $01
-	; Rotation 3 (Pointing Right)
 	.byte $FF, $FF,  $FF, $00,  $FF, $01,  $00, $FF
+	; Rotation 1 (Pointing Left)
+	.byte $FF, $FF,  $FF, $00,  $00, $00,  $01, $00
+	; Rotation 2 (Pointing Up)
+	.byte $FF, $01,  $00, $FF,  $00, $00,  $00, $01
+	; Rotation 3 (Pointing Right)
+	.byte $FF, $00,  $00, $00,  $01, $00,  $01, $01
 
 	; =========================================================================
 	; 4. O PIECE (Square)
@@ -1988,16 +1988,16 @@ pieces:
 	.byte $FF, $FF,  $FF, $00,  $00, $FF,  $00, $00
 
 	; =========================================================================
-	; 5. S PIECE
+	; 5. S PIECE (Data corrected to actual S shapes)
 	; =========================================================================
 	; Rotation 0 (Horizontal)
-	.byte $FF, $FF,  $FF, $00,  $00, $00,  $01, $00
+	.byte $FF, $00,  $FF, $01,  $00, $FF,  $00, $00
 	; Rotation 1 (Vertical)
-	.byte $FF, $01,  $00, $FF,  $00, $00,  $00, $01
+	.byte $FF, $FF,  $00, $FF,  $00, $00,  $01, $00
 	; Rotation 2 (Horizontal - Duplicate)
-	.byte $FF, $FF,  $FF, $00,  $00, $00,  $01, $00
+	.byte $FF, $00,  $FF, $01,  $00, $FF,  $00, $00
 	; Rotation 3 (Vertical - Duplicate)
-	.byte $FF, $01,  $00, $FF,  $00, $00,  $00, $01
+	.byte $FF, $FF,  $00, $FF,  $00, $00,  $01, $00
 
 	; =========================================================================
 	; 6. T PIECE
@@ -2006,7 +2006,7 @@ pieces:
 	.byte $FF, $00,  $00, $FF,  $00, $00,  $00, $01
 	; Rotation 1 (Pointing Right)
 	.byte $FF, $00,  $00, $00,  $00, $01,  $01, $00
-	; Rotation 2 (Pointing Down)
+	; Rotation 2 (Pointing Down) - SPECIAL EXCEPTION (Min Y = 0)
 	.byte $00, $FF,  $00, $00,  $00, $01,  $01, $00
 	; Rotation 3 (Pointing Left)
 	.byte $FF, $00,  $00, $FF,  $00, $00,  $01, $00
@@ -2023,7 +2023,7 @@ pieces:
 	; Rotation 3 (Vertical - Duplicate)
 	.byte $FF, $01,  $00, $00,  $00, $01,  $01, $00
 piece_tile_tbl:
-	.byte $30, $32, $31, $33, $32, $30, $31
+	.byte $30, $32, $31, $30, $32, $30, $31
 piece_color_tbl:
 	.byte $0F, $30, $21, $12
 	.byte $0F, $30, $29, $1A
