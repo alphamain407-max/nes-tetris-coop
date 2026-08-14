@@ -238,7 +238,7 @@ ClearVRAM:
 	LDA #$00
 	STA $2006
 
-	LDA #$00        ; Tile $00 (usually blank/empty tile)
+	LDA #$00        ; Tile $00
 	LDX #$10        ; Clear 16 pages of 256 bytes = 4,096 bytes ($2000–$2FFF)
 	LDY #$00
 ClearLoop:
