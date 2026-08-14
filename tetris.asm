@@ -736,7 +736,7 @@ slide:
 	CPY #$10          ; DAS Repeat Rate 
 	BNE lr_done
 	
-	LDA #$0C
+	LDA #$0A
 	STA <dastmr, X    ; Reset timer
 	JMP okMove
 	
@@ -807,11 +807,10 @@ MoveSuccess:
 	
 MoveBlocked:
 	LDX <temp3
-	LDA <dasbool, X
-	BEQ :+
+	LDA #$01
+	STA <dasbool, X
 	LDA #$0A
 	STA <dastmr, X
-:
 	JMP CheckRotate
 
 CheckRotate:
@@ -1007,10 +1006,11 @@ Lose:
 	STA $4015
 	JSR RenderActivePiecesSub
 	JSR RenderNextPiecesSub
+LoseLoop:
 	JSR ReadControllers
 	LDA <ctrl1
 	AND #%10000000
-	BEQ Lose
+	BEQ LoseLoop
 	JMP ResetGame
 RenderScreen:
 	LDA $2002
