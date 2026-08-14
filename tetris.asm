@@ -1006,11 +1006,10 @@ Lose:
 	STA $4015
 	JSR RenderActivePiecesSub
 	JSR RenderNextPiecesSub
-LoseLoop:
 	JSR ReadControllers
 	LDA <ctrl1
 	AND #%10000000
-	BEQ LoseLoop
+	BEQ Lose
 	JMP ResetGame
 RenderScreen:
 	LDA $2002
